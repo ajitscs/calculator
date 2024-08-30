@@ -24,11 +24,18 @@ RSpec.describe Calculator do
       end
 
       it 'returns sum of numbers if input is multiple numbers' do
-        expect(calculator.add("2, 4, 8")).to eq(14)
+        expect(calculator.add("2,4,8")).to eq(14)
+      end
+
+      it 'returns sum of numbers if input is mix of numbers and chars' do
+        expect(calculator.add("2,4,8,a,b")).to eq(14)
       end
     end
 
     describe 'input with \n character' do
+      it 'returns sum of numbers if new line char is included' do
+        expect(calculator.add("2,4\n8")).to eq(14)
+      end
     end
 
     describe 'input with delimiters' do
