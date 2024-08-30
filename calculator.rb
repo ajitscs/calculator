@@ -10,6 +10,12 @@ class Calculator
         /,|\n/
       end
 
-    numbers.split(delimiters).map(&:to_i).sum
+    numbers_array = numbers.split(delimiters).map(&:to_i)
+
+    negative_numbers = numbers_array.select { |n| n < 0 }
+    
+    raise StandardError, "Negative numbers not allowed #{negative_numbers.join(',')}" if negative_numbers.any?
+
+    numbers_array.sum
   end
 end
