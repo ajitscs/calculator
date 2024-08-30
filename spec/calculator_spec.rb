@@ -1,7 +1,7 @@
-require 'calculator'
+require './calculator'
 
-RSpec.describe StringCalculator do
-  let(:calculator) { StringCalculator.new }
+RSpec.describe Calculator do
+  let(:calculator) { Calculator.new }
 
   describe '#add' do
     describe 'input datatype check' do
