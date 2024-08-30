@@ -42,6 +42,14 @@ RSpec.describe Calculator do
       it 'returns sum of numbers if delimiters is included' do
         expect(calculator.add("//;\n1;2")).to eq(3)
       end
+
+      it 'returns 0 if no number is given' do
+        expect(calculator.add("//;")).to eq(0)
+      end
+
+      it 'returns 0 if no number is given' do
+        expect(calculator.add("//")).to eq(0)
+      end
     end
 
     describe 'negative numbers' do
