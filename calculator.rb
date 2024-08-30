@@ -4,6 +4,12 @@ class Calculator
   
     return 0 if numbers.empty?
 
-    numbers.split(/,|\n/).map(&:to_i).sum
+    delimiters = if numbers.start_with?('//')
+        /,|\n|#{Regexp.escape(numbers[2])}/
+      else
+        /,|\n/
+      end
+
+    numbers.split(delimiters).map(&:to_i).sum
   end
 end
