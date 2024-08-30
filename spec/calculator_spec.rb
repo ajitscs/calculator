@@ -39,6 +39,9 @@ RSpec.describe Calculator do
     end
 
     describe 'input with delimiters' do
+      it 'returns sum of numbers if delimiters is included' do
+        expect(calculator.add("//;\n1;2")).to eq(3)
+      end
     end
 
     describe 'negative numbers' do
