@@ -13,5 +13,28 @@ RSpec.describe Calculator do
         expect(calculator.add("")).to be_a(Integer)
       end
     end
+
+    describe 'input as comma separated number' do
+      it 'returns 0 if string is blank' do
+        expect(calculator.add("")).to eq(0)
+      end
+
+      it 'returns number if input is one number' do
+        expect(calculator.add("2")).to eq(2)
+      end
+
+      it 'returns sum of numbers if input is multiple numbers' do
+        expect(calculator.add("2, 4, 8")).to eq(14)
+      end
+    end
+
+    describe 'input with \n character' do
+    end
+
+    describe 'input with delimiters' do
+    end
+
+    describe 'negative numbers' do
+    end
   end
 end
